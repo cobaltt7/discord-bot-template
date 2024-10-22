@@ -5,7 +5,6 @@ export default {
 		logs: "TODO",
 	},
 
-
 	emojis: {
 		no: "<:emoji:TODO>",
 	},

@@ -49,5 +49,5 @@ async function getDependencies(): Promise<APIEmbedField[]> {
 	const dependencies = (await Promise.all(promises))
 		.filter(Boolean)
 		.toSorted((one, two) => one.localeCompare(two));
-	return await columnize(dependencies,"🗄️ Third-party code libraries");
+	return await columnize(dependencies, "🗄️ Third-party code libraries");
 }
