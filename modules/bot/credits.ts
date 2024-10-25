@@ -34,7 +34,7 @@ function getOwner(): User | undefined {
 }
 
 async function getDependencies(): Promise<APIEmbedField[]> {
-	const dependencyNames = Object.keys({ ...pkg.dependencies, ...pkg.optionalDependencies });
+	const dependencyNames = Object.keys(pkg.dependencies);
 	const promises = dependencyNames.map((name) =>
 		import(`../../../node_modules/${name}/package.json`, { assert: { type: "json" } }).then(
 			(dependency: { default: { name: string; version: `${bigint}.${bigint}.${string}` } }) =>

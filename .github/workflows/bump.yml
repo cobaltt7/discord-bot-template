@@ -2,7 +2,7 @@ name: Bump dependencies
 on:
     workflow_dispatch:
     schedule:
-        - cron: 45 11 * * * # 60 min before Dependabot
+        - cron: 45 19 * * * # 60 min before Dependabot
     push:
         paths:
             - package.json
@@ -21,10 +21,10 @@ jobs:
 
         steps:
             - name: Checkout
-              uses: actions/checkout@v4.1.7
+              uses: actions/checkout@v4.2.2
 
             - name: Setup Node.JS
-              uses: actions/setup-node@v4.0.3
+              uses: actions/setup-node@v4.1.0
               with:
                   node-version: 20.6.0
                   cache: npm

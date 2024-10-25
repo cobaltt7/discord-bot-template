@@ -28,7 +28,7 @@ await login({
 });
 
 const channel = await client.channels.fetch(constants.channels.logs);
-assert(channel?.isTextBased());
+assert(channel?.isSendable());
 process
 	.on(
 		"uncaughtException",
