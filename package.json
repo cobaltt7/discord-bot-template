@@ -16,7 +16,7 @@
 	"prettier": "@redguy12/prettier-config",
 	"dependencies": {
 		"discord.js": "14.17.0-dev.1728000701-c1b849fa5",
-		"mongoose": "8.7.2",
+		"mongoose": "8.7.3",
 		"strife.js": "4.1.3"
 	},
 	"devDependencies": {
