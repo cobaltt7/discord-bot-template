@@ -1,3 +1,10 @@
+import type { Snowflake } from "discord.js";
+
+const env =
+	process.argv.some((file) => file.endsWith(".test.js")) ? "testing"
+	: process.env.NODE_ENV === "production" ? "production"
+	: "development";
+
 export default {
 	collectorTime: 45_000,
 
@@ -7,12 +14,9 @@ export default {
 
 	emojis: {
 		no: "<:emoji:TODO>",
-	},
+	} satisfies Record<string, `<${"a" | ""}:emoji:${Snowflake}>`>,
 
-	env:
-		process.argv.some((file) => file.endsWith(".test.js")) ? "testing"
-		: process.env.NODE_ENV === "production" ? "production"
-		: "development",
+	env,
 
 	testingServer: "TODO",
 	themeColor: 0x00_00_00, // TODO
