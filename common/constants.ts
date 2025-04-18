@@ -8,20 +8,14 @@ const env =
 export default {
 	collectorTime: 45_000,
 
-	channels: {
-		logs: "TODO",
-	},
+	channels: { logs: "TODO" },
 
-	emojis: {
-		no: "<:emoji:TODO>",
-	} satisfies Record<string, `<${"a" | ""}:emoji:${Snowflake}>`>,
+	emojis: { no: "<:emoji:TODO>" } satisfies Record<string, `<${"a" | ""}:emoji:${Snowflake}>`>,
 
 	env,
 
 	testingServer: "TODO",
 	themeColor: 0x00_00_00, // TODO
 
-	users: {
-		bot: "TODO",
-	},
+	users: { bot: "TODO" },
 } as const;
