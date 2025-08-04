@@ -19,4 +19,8 @@ export default declareConfig(
 	},
 	{ rules: { "no-warning-comments": "off" } }, // TODO: remove
 	{ files: ["./common/typedefs/**"], rules: { "unicorn/filename-case": "off" } },
+	{
+		files: ["./common/constants.ts"],
+		rules: { "sort-keys": ["error", "asc", { caseSensitive: false, natural: true }] },
+	},
 );
