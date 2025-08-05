@@ -1,5 +1,7 @@
 import type { APIEmbedField, ChatInputCommandInteraction, User } from "discord.js";
 
+import assert from "node:assert";
+
 import { inlineCode, Team, time, TimestampStyles } from "discord.js";
 import { client, columnize } from "strife.js";
 
@@ -9,7 +11,10 @@ import pkg from "../../package.json" with { type: "json" };
 const dependencyColumns = await getDependencies();
 
 export default async function info(interaction: ChatInputCommandInteraction): Promise<void> {
-	const message = await interaction.deferReply({ fetchReply: true });
+	const response = await interaction.deferReply({ withResponse: true });
+	const message = response.resource?.message;
+	assert(message);
+
 	const owner = getOwner();
 	await interaction.editReply({
 		content: "",
@@ -19,7 +24,8 @@ export default async function info(interaction: ChatInputCommandInteraction): Pr
 				title: "Status",
 				thumbnail: { url: client.user.displayAvatarURL() },
 				color: constants.themeColor,
-				description: `I’m open-source! The source code is available [on GitHub](https://github.com/cobaltt7/TODO).`,
+				description:
+					"I’m open-source! The source code is available [on GitHub](https://github.com/cobaltt7/TODO).",
 
 				fields: [
 					{ name: "⚙️ Mode", value: inlineCode(constants.env), inline: true },
