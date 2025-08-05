@@ -6,9 +6,9 @@ const env =
 	: "development";
 
 export default {
-	collectorTime: 45_000,
-
 	channels: { logs: "TODO" },
+
+	collectorTime: 45_000,
 
 	emojis: { no: "<:emoji:TODO>" } satisfies Record<string, `<${"a" | ""}:emoji:${Snowflake}>`>,
 
